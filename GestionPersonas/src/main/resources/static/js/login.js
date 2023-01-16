@@ -21,7 +21,7 @@ async function iniciarSesion(){
 
     if(response != 'FAIL'){
         localStorage.email = datos.email;
-        window.location.href='usuarios.html'
+        window.location.href='perfil.html'
     }else{
         alert('Las credenciales son incorrectas!');
    }

@@ -1,28 +1,33 @@
-package com.gestion.gestion.models;
+package com.gestion.dto;
 
-import jakarta.persistence.*;
-import org.springframework.boot.autoconfigure.web.WebProperties;
 
-@Table(name = "usuarios") @Entity
-public class Usuario {
 
-    @Column(name = "id") @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+public class UsuarioDto {
+
     private Long id;
-    @Column(name = "nombre")
     private String nombre;
-    @Column(name = "apellido")
-    private String apellido;
-    @Column(name = "email")
-    private String email;
-    @Column(name = "telefono")
-    private String telefono;
-    @Column(name = "password")
-    private String password;
 
-    public Usuario() {
+    private String apellido;
+
+    private String email;
+
+    private String telefono;
+
+    public UsuarioDto() {
+    }
+    public UsuarioDto(String email) {
+        this.email = email;
     }
 
-    public Usuario(long id, String nombre, String apellido, String email, String telefono, String password) {
+    public UsuarioDto(String nombre, String apellido, String email, String telefono, String password) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.email = email;
+        this.telefono = telefono;
+        this.password = password;
+    }
+
+    public UsuarioDto(long id, String nombre, String apellido, String email, String telefono, String password) {
         this.id=id;
         this.nombre=nombre;
         this.apellido=apellido;
@@ -78,4 +83,6 @@ public class Usuario {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    private String password;
 }

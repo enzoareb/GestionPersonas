@@ -1,4 +1,4 @@
-package com.gestion.gestion;
+package com.gestion;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
