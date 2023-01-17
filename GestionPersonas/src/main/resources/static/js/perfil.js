@@ -33,8 +33,13 @@ async function cargarPerfil() {
 
 }
 
-async function editar() {
+
+function editar() {
     document.getElementById('cardEditarPerfil').style.opacity = '1';
+}
+
+ function cancelarEditarUsuario() {
+    document.getElementById('cardEditarPerfil').style.opacity = '0';
 }
 
 async function editarUsuario() {

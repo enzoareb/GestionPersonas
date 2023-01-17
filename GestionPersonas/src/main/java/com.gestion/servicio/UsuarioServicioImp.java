@@ -45,11 +45,13 @@ public class UsuarioServicioImp  implements UsuarioServicio{
 
     @Override
     public boolean verificarUsuarioPorCredenciales(UsuarioDto usuarioDto) {
+
         Usuario usuario= usuarioRepository.findByEmail(usuarioDto.getEmail());
         if (usuario == null)
             return false;
         String passwordHashed= usuario.getPassword();
         Argon2 argon2 = Argon2Factory.create(Argon2Factory.Argon2Types.ARGON2id);
+
         return argon2.verify(passwordHashed,usuarioDto.getPassword());
     }
 
