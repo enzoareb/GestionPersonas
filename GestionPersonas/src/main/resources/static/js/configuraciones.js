@@ -1,9 +1,11 @@
 // Call the dataTables jQuery plugin
 $(document).ready(function() {
-
+    actualizarPerfilUsuario();
 });
 
-
+function actualizarPerfilUsuario(){
+    document.getElementById("txt-perfilUsuario").outerHTML = localStorage.email;
+}
 
 async function cambiarPassword(){
 
